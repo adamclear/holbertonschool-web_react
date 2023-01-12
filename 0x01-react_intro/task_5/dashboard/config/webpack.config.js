@@ -15,10 +15,6 @@ module.exports = {
 		hot: true
 	},
 	devtool: 'inline-source-map',
-	plugins: [
-		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin()
-	],
 	module: {
 		rules: [
 			{
