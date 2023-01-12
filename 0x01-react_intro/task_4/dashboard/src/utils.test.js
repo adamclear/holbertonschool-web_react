@@ -1,26 +1,18 @@
-import { assert } from 'chai';
+import { expect } from 'chai';
 import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
-describe('Utils', () => {
-	describe('getFullYear', () => {
-		it('returns the correct year', () => {
-			assert.equal(getFullYear(), new Date().getFullYear());
-		});
-	});
+test('getFullYear returns correct year', () => {
+	expect(getFullYear()).toBe(2023);
+});
 
-	describe('getFooterCopy', () => {
-		it('returns the correct string (false)', () => {
-			assert.equal(getFooterCopy(0), 'Holberton School main dashboard');
-		});
-		it('returns the correct string (true)', () => {
-			assert.equal(getFooterCopy(1), 'Holberton School');
-		});
-	});
+test('getFooterCopy returns correct string (false)', () => {
+	expect(getFooterCopy(0)).toBe('Holberton School main dashboard');
+});
 
-	describe('getLatestNotification', () => {
-		it('returns the correct string', () => {
-			assert.equal(getLatestNotification(),
-			'<strong>Urgent requirement</strong> - complete by EOD');
-		});
-	});
+test('getFooterCopy returns correct string (true)', () => {
+	expect(getFooterCopy(1)).toBe('Holberton School');
+});
+
+test('getLatestNotification returns correct string', () => {
+	expect(getLatestNotification()).toBe('<strong>Urgent requirement</strong> - complete by EOD');
 });
