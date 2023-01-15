@@ -1,6 +1,9 @@
+import React from 'react';
 import Notifications from './Notifications';
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
+configure({adapter: new Adapter()});
 describe('Notifications', () => {
 	it('Notifications renders w/o crashing', () => {
 		const wrapper = shallow(<Notifications />);
