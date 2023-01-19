@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BodySection from './BodySection';
-//import './BodySection.css';
 import { css, StyleSheet } from 'aphrodite';
 
 const styles = StyleSheet.create({
