@@ -7,7 +7,14 @@ const styles = StyleSheet.create({
   logo: {
 		width: '240px',
 		height: '240px'
-	}
+	},
+
+	header: {
+    display: 'flex',
+    alignItems: 'center',
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    color: 'rgb(221, 72, 72)'
+  },
 });
 
 export default function Header() {

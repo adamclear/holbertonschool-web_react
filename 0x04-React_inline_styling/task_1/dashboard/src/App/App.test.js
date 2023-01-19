@@ -4,12 +4,19 @@ import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import 'jsdom-global/register';
 import sinon from 'sinon';
+import { StyleSheetTestUtils } from 'aphrodite';
 
 window.alert = sinon.spy()
 
 configure({adapter: new Adapter()});
 
 describe('<App />', () => {
+	beforeEach(() => {
+		StyleSheetTestUtils.suppressStyleInjection();
+	});
+	afterEach(() => {
+		StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+	});
 	it('App renders w/o crashing', () => {
 		const wrapper = shallow(<App />);
 		expect(wrapper.exists()).toBe(true);
