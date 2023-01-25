@@ -52,4 +52,13 @@ describe('<App />', () => {
 		const wrapper = shallow(<App />);
 		expect(wrapper.find('Footer').exists()).toBe(true);
 	});
+
+	it('Default state of displayDrawer is false & hide/display work', () => {
+		const wrapper = shallow(<App />);
+		expect(wrapper.state('displayDrawer')).toBe(false);
+		wrapper.instance().handleDisplayDrawer();
+		expect(wrapper.state('displayDrawer')).toBe(true);
+		wrapper.instance().handleHideDrawer();
+		expect(wrapper.state('displayDrawer')).toBe(false);
+	});
 })

@@ -109,7 +109,11 @@ export default class Notifications extends React.Component {
 							className={`button ${css(styles.button)}`}
 							aria-label="Close"
 							onClick={ handleHideDrawer }>
-								<img src={closeIcon} height="15px" width="15px" alt="close icon" />
+								<img src={closeIcon}
+									id="close-icon"
+									height="15px"
+									width="15px"
+									alt="close icon" />
 						</button>
 						{listNotifications.length ?
 							(<p className={`${css(styles.p_text)}`}>
@@ -134,9 +138,13 @@ export default class Notifications extends React.Component {
 Notifications.propTypes = {
 	displayDrawer: PropTypes.bool,
 	listNotifications: PropTypes.arrayOf(NotificationItemShape),
+	handleHideDrawer: PropTypes.func,
+	handleDisplayDrawer: PropTypes.func
 };
 
 Notifications.defaultProps = {
 	displayDrawer: false,
 	listNotifications: [],
+	handleHideDrawer: () => {},
+	handleDisplayDrawer: () => {}
 }

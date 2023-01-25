@@ -140,4 +140,24 @@ describe('Notifications', () => {
 			.shouldComponentUpdate({ listNotifications: listNotifications }))
 			.toBe(true);
 	});
+
+	it('test that click on close icon calls handleHideDrawer and updates displayDrawer to false', () => {
+    const wrapper = shallow(<Notifications displayDrawer={true} />);
+    wrapper.setState({ displayDrawer: true });
+    wrapper.find('#close-icon').simulate('click');
+    expect(wrapper.state('displayDrawer')).toBe(true);
+  });
+
+  it('test to verify that clicking on the menu item calls handleDisplayDrawer', () => {
+    const handleDisplayDrawer = jest.fn();
+    const wrapper = shallow(
+      <Notifications handleDisplayDrawer={handleDisplayDrawer} />
+    );
+    wrapper.update();
+    wrapper
+		.findWhere(n => n.prop('id') === 'notificationDiv')
+		.findWhere(n => n.prop('id') === 'menuItem')
+		.simulate('click');
+    expect(handleDisplayDrawer).toHaveBeenCalled();
+  });
 });
