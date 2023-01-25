@@ -4,5 +4,5 @@
 import Immutable from 'immutable';
 
 export default function accessImmutableObject(obj, array) {
-	return Immutable.fromJS(obj).getIn(array);
+  return Immutable.fromJS(obj).getIn(array);
 }
