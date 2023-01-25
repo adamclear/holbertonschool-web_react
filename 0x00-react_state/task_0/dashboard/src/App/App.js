@@ -80,6 +80,7 @@ export default class App extends React.Component {
 
   render () {
     const {isLoggedIn} = this.props;
+    const {displayDrawer} = this.state;
     return (
       <React.Fragment>
         <div className="App">
